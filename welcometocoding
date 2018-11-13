@@ -124,3 +124,17 @@ Final:
     posts = sort_posts(posts, "title")
 
     render_posts(user_name, posts)
+
+// Recap
+
+So...
+
+On our local machine, we built up a request asking for some special stuff from Reddit.
+
+We sent this request through the Internet tubes to the side door - the API - of Reddit.
+
+Reddit then built up a response for us, ran their code/logic, and sent the response back through the Internet back to us.
+
+Before putting it up on the page, we had some logic to do on our side - we sorted the posts, we filtered the posts, we styled the posts.
+
+This process of receiving a response and doing some interesting complicated stuff on our computer is called front-end engineering.
