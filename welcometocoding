@@ -1,0 +1,126 @@
+# notes
+
+App Academy
+
+Welcome to Coding
+
+Filled in username and name of target subreddit, then pulled information from Reddit through an 'API' - described as a programmer's side door.
+
+// Number Posts
+
+When we get_and_render_posts, we get 5 posts every time. If we want to get more posts, we need to add a controlling variable. If we add number_of_posts = 10, we will now get 10 posts each time.
+
+What was going on behind the scenes? Not only did Reddit have to locate the information from its databases, it has to figure out how many to output. Processing, decisions and logic behind the scenes. All done through code.
+
+A website like Reddit is made from millions of lines of code.
+
+// Factoring Out
+
+Up until now, we've been grabbing the posts and rendering them in one fell swoop. We're now going to seperate out our 'getter' and our render method. We'll see why in the next step.
+
+// The Hardest Aspect of Programming
+
+1
+
+    get_and_render_posts(user_name, subreddit, number_of_posts)
+      
+2
+
+    posts = get_posts(subreddit, number_of_posts)
+
+    render_posts(user_name, posts)
+
+Here we did exactly the same thing, but seperated out the 'getter' and the render.
+
+REFACTORING: Finding the best way to organise/orient our code so that we can more easily work with it and make it more sophisticated without (hopefully) getting lost in the code.
+
+// Adding Subreddits
+
+    subreddits = ["fifa", "reddeadredemption", "gaming"]
+
+Here, we created a list (called an array) of subreddits in order to combine posts from multiple subreddits into a single feed.
+
+// Our Friend, the Bracket
+
+Jargon:
+
+  Text encased in quotation marks = 'string' (of letters).
+
+  Numbers = numbers.
+
+  Brackets = array; its job is to hold a list of items for the times when you want a list of related things.
+  
+// Sorting Our Posts
+
+Thus far, our posts are ordered alphabetically by title. To sort by date instead, we amend the second string on line 11 from "title" to "date".
+
+    require '/tmp/shadow_code'
+
+    user_name = "Prgrmmng"
+
+    subreddits = ["fifa", "SeriousFifa", "hardcoreaww", "puppies"]
+
+    number_of_posts = 100
+
+    posts = get_posts(subreddits, number_of_posts)
+
+    posts = sort_posts(posts, "date")
+
+    render_posts(user_name, posts)
+    
+// Filtering Them Too
+
+We've gotten our posts sorted in a good order, but maybe we now want to filter them? To get just the best animals, we will only fetch posts that have a "!" in the title.
+
+Instead of the filter_by call, inside the array - [] - we add the string "!" to filter out all the posts that do not have an exclamation mark.
+
+    require '/tmp/shadow_code'
+
+    user_name = "Joe"
+
+    subreddits = ["aww", "awww", "hardcoreaww", "puppies"]
+
+    filter_by(["!"])
+
+    posts = get_posts(subreddits)
+
+    posts = sort_posts(posts, "title")
+
+    render_posts(user_name, posts)
+    
+Bonus:
+
+Added another filter - "?".
+
+    filter_by(["!","?"])
+    
+    
+// Add a Little Style
+
+Welp! We just built our first small web application. To add some finishing touches, we will change some strings in the 'style' hash.
+
+Final:
+
+    require '/tmp/shadow_code'
+
+    set_styles({
+        background: "cyan",
+      title_size: 28,
+      font_style: "sans_serif",
+      title_align: "centre",
+      image_border_radius: 15
+    })
+
+    user_name = "Prgrmmng"
+
+    subreddits = ["fifa", "reddeadredemption", "blackops4"]
+
+    number_of_posts = 100
+
+    filter_by(["!","?","review"])
+
+    posts = get_posts(subreddits)
+
+    posts = sort_posts(posts, "title")
+
+    render_posts(user_name, posts)

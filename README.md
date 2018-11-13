@@ -1,5 +1,0 @@
-# notes
-
-App Academy
-
-Welcome
