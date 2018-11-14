@@ -1,0 +1,180 @@
+// Intro
+
+During this course, we are going to explore the foundations of programming.
+
+Programming is fundamentally about giving our computer some instructions with the goal of solving a problem.
+
+Not only are we going to learn how to communicate with our computers, we are going to solve some cool problems along the way.
+
+Advice:
+
+* Programming will feel tough at the start, and you are likely to do lots of things wrong. Don't fret! This leads to a lot of learning opportunities.
+
+// Hello World
+
+We need to be very explicit when programming. In this case, we need to add puts before our message in.
+
+    puts "Hello World"
+    puts "Goodbye"
+    
+Order of execution remains constant - our code is read top to bottom, left to right.
+
+If we just used:
+
+    puts "Hello World"
+    "Goodbye"
+    
+We would see "Hello World" but not "Goodbye". The code is still there, but we will not see it as an output.
+
+// Comments
+
+    puts "one"
+    puts "tomato"
+    puts "two"
+    puts "tomato"
+    
+Here we have four commands, that print out one message each.
+
+In occasions where we want to skip over certain lines of code, we can use comments.
+
+If we wanted to skip over the first "tomato" command but only temporarily, we can just add a # at the front of the line, like so:
+
+    puts "one"
+    #puts "tomato"
+    puts "two"
+    puts "tomato"
+    
+This will gray out the relevant line of code, signifying that the line will be ignored when our code is run.
+
+*** Shortcut *** We can highlights multiple lines of code and do CTRL + / to put them all inside of a comment.
+
+We can also put comments/notes wherever we want, for example:
+
+    puts "tomato" # it's a great fruit
+
+This will still run our code, skipping over the comment "it's a great fruit".
+
+Comments can help us to temporarily ignore certain lines of code, but are mostly used to break down and explain more tricky pieces of code.
+
+// Numbers
+
+// Numbers Lecture 1
+
+In this lecture, we will be going over our first data type in Ruby: numbers.
+
+    1 + 1
+
+This is valid Ruby code. Recall from previous lesson, whenever we want to see an output we need to use print or puts.
+
+We want to see how 1 + 1 evaluates, so we are going to put puts in front of it:
+
+    puts 1 + 1
+
+This will then return the answer: 2.
+
+We can have negative numbers and decimal numbers in Ruby, too:
+
+    puts 1 + 1
+    puts -5 + 3
+    puts 2.5 + 0.5
+    
+We can do the four fundamental arithmetic operations (addition, subtraction, multiplication and division) as follows:
+
+    puts 1 + 1
+    puts 10 - 8
+    puts 5 * 5
+    puts 5 / 2
+    
+Everything here will work except for the division, which will output 2 instead of 2.5.
+
+Another example:
+
+    puts 9 / 2
+    
+Will return 4. Ruby is ignoring the decimal part; in order to see the decimal, we need to make one of the numbers a decimal, e.g.
+
+    puts 9 / 2.0
+
+# Order of Operations
+# Parentheses, Multiplication-Division, Addition-Subtraction
+
+So...
+
+    puts 6 + 4 / 2
+    puts (6 + 4) / 2
+    
+Will return 8 and 5.
+
+# Modulo gives us the remainder of the division
+# Modulo is % in Ruby
+
+    puts 13 % 5 # 13 / 5 = 2 r 3
+    puts 14 % 5
+    puts 15 % 5
+    
+Returns 3, 4, 0.
+
+// Numbers Lecture 2
+
+# Ruby Number Comparisons Lecture
+
+# equal ==
+# not equal !=
+# greater than >
+# less than <
+# greater than or equal to >=
+# less than or equal to <=
+
+We want to learn some more operations; these ones are unique in that we are comparing numbers relative to one another.
+
+Examples:
+
+    puts 5 == 5 # true
+    puts 3 == 5 # false
+    puts 3 != 5 # true
+    puts 5 != 5 # false
+    puts 25 > 20 # true
+    puts 7 < 11 # true
+    puts 100 >= 100 # true
+    puts 200 >= 100 # true
+    
+// Numbers Quiz
+
+1. What will 10 / 3 evaluate to?
+
+9
+3
+3.3333333
+
+Answer: 3. Division with integers will ignore the decimal part of the result. If we want to get a decimal, one of the numbers must be a decimal. For example, 10 / 3.0 will give 3.3333333.
+
+2. What will 5 + 5 / 2.0 evaluate to?
+
+7.5
+5
+
+Answer: 7.5. Arithmetic follows the order of operations. Division has a higher precedence than addition.
+
+3. What will 27 % 6 evaluate to?
+
+4
+0.5
+3
+
+Answer: 3. Modulo (%) gives us the remainder of the division. 27 divided by 4 is 4 w/ remainder 3. So the answer is 3.
+
+// Numbers Exercise 1
+
+    puts 4 * 3 * 2 * 2 # 48
+    puts (6 * 6) / (3 + 3) # 6
+    puts 155 % (24 / 6) # 3
+    puts 2482 / 0.5 * 320 / 45 # 35299.5555555
+    
+// Numbers Exercise 2
+
+    puts 5 + 3 == 8 # true
+    puts 4 * 4 < 17 # true
+    puts 2 <= 2 # true
+    puts (5 * 5) != 25 # false
+    puts 3 < 4 # true
+    puts 3 < 0 # false
